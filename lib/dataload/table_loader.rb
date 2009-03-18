@@ -67,7 +67,7 @@ module TableCreation
     DataloadMigration.new_migration(:cols => columns, :table_name => table_name) do
       create_table(table_name, :id => false) do |t|
         cols.each do |col|
-          t.column col.target_name, :string
+          t.column col.target_name, col.column_type
         end
       end
     end

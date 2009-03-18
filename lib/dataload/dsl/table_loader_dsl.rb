@@ -27,7 +27,7 @@ class TableLoaderDSL
       real_name = name.keys.first
     end
     blk ||= lambda { |x| x.send(real_name) }
-    loader.columns << Column.new(:target_name => real_name, :blk => blk)
+    loader.columns << Column.new(:target_name => real_name, :blk => blk, :column_type => type)
   end
   def method_missing(sym,*args,&b)
     if [:string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean].include?(sym)
