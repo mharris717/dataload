@@ -49,8 +49,8 @@ table_dataload do
 end
 
 master_dataload do
-  database :adapter => 'sqlite3', :database => db_path, :timeout => 5000
-  #database :adapter => 'mysql', :database => 'dataload_test', :username => 'root'
+  #database :adapter => 'sqlite3', :database => db_path, :timeout => 5000
+  database :adapter => 'mysql', :database => 'dataload_test', :username => 'root'
   load_order :people
   block_size 1000
 end
